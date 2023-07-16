@@ -1,0 +1,16 @@
+* {
+    /* Clear all default margins */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.lg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lg-m-1{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
