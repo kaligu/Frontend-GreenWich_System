@@ -6,35 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/normalize.css">
 
+    <!-- Initialized Boostrap CSS Framework-->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="css/index-css.css">
 
-    <link rel="icon" type="image/x-icon" href="assets/roundlogo.png">
+    <link rel="icon" type="image/x-icon" href="assets/icons/roundlogo.png">
     <title>GreenWich Library</title>
 </head>
-<body>
 
-  <!-- LOGIN SECTION -->
-  <section class="lg">
-      <div class="lg-m-1">
-          <div class="lg-m-1-s-1">
-              <img src="assets/roundlogo.png" alt="main-logo">
-          </div>
-          <div class="lg-m-1-s-2">
-              <label>
-                  <input type="text" placeholder="Username">
-              </label>
-              <label>
-                  <input type="password" placeholder="Password">
-              </label>
-              <button type="button">LOGIN</button>
-          </div>
-      </div>
-      <div class="lg-m-2">
-          <div class="lg-m-2-s-1">
-              <p>The Greenwich Library system consists of the Main Library and Byram Shubert and Cos Cob branches. With 1,800 programs and events per year, the Library serves as the cultural and intellectual crossroads of the community. Greenwich Library’s circulation is among the highest of public libraries in Connecticut and has been named a five-star library by Library Journal for 11 of the past 12 years for patron visits, circulation, use of public computers, and attendance at events.</p>
-          </div>
-      </div>
-  </section>
+<body style="background-color: rgba(69,78,69,0.93)">
 
+<!-- login page-->
+<section class="user-login">
+    <!-- Section: Design Block -->
+    <section class="background-radial-gradient overflow-hidden">
+        <style>
+            .background-radial-gradient {
+                background-color: hsl(218, 41%, 15%);
+                background-image: radial-gradient(650px circle at 0% 0%,
+                hsl(218, 41%, 35%) 15%,
+                hsl(218, 41%, 30%) 35%,
+                hsl(218, 41%, 20%) 75%,
+                hsl(218, 41%, 19%) 80%,
+                transparent 100%),
+                radial-gradient(1250px circle at 100% 100%,
+                        hsl(218, 41%, 45%) 15%,
+                        hsl(218, 41%, 30%) 35%,
+                        hsl(218, 41%, 20%) 75%,
+                        hsl(218, 41%, 19%) 80%,
+                        transparent 100%);
+            }
+
+            #radius-shape-1 {
+                height: 220px;
+                width: 220px;
+                top: -60px;
+                left: -130px;
+                background: radial-gradient(#44006b, #ad1fff);
+                overflow: hidden;
+            }
+
+            #radius-shape-2 {
+                border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+                bottom: -60px;
+                right: -110px;
+                width: 300px;
+                height: 300px;
+                background: radial-gradient(#44006b, #ad1fff);
+                overflow: hidden;
+            }
+
+            .bg-glass {
+                background-color: hsla(0, 0%, 100%, 0.9) !important;
+                backdrop-filter: saturate(200%) blur(25px);
+            }
+        </style>
+
+        <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+            <div class="row gx-lg-5 align-items-center mb-5">
+                <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+
+                    <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                        <img src="assets/icons/roundlogo.png" class="img-fluid " alt="icon" style="width:90px">
+                        Green Wich <br />
+                        <span style="color: hsl(218, 81%, 75%)">Library System V1.0.0</span>
+                    </h1>
+                    <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                        The Greenwich Library system consists of the Main Library and Byram Shubert and Cos Cob branches. With 1,800 programs and events per year, the Library serves as the cultural and intellectual crossroads of the community. Greenwich Library’s circulation is among the highest of public libraries in Connecticut and has been named a five-star library by Library Journal for 11 of the past 12 years for patron visits, circulation, use of public computers, and attendance at events.
+                    </p>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                    <div class="card bg-glass">
+                        <div class="card-body px-4 py-5 px-md-5">
+                            <!-- Username input -->
+                            <div class="form-outline mb-4">
+                                <input type="email" id="txtfld-username" class="form-control" />
+                                <label class="form-label" for="txtfld-username">Username</label>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <input type="password" id="txtfld-password" class="form-control" />
+                                <label class="form-label" for="txtfld-password">Password</label>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button  class="btn btn-primary btn-block mb-4" id="user-login-btn">
+                                Click to Login
+                            </button>
+
+                            <div class="alert alert-danger" role="alert" style="display: none" id="mismatch-error">
+                                Username or Password or both are Mismatched! Try again...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script src="js/jquery-3.6.4.min.js"></script>
+
+<script src="js/Login-Script.js"></script>
 </body>
 </html>
