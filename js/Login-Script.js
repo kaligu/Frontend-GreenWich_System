@@ -51,9 +51,8 @@ createAjaxReq = (studentdatajson) => {
                     console.log("after state")
                     const response = http.responseText;
                     console.log(response)
-                    resolve(true); // AJAX request succeeded
                     if (response.includes("valid login")) {
-
+                        resolve(true); // AJAX request succeeded
                     }
                 } else {
                     resolve(false); // AJAX request failed
