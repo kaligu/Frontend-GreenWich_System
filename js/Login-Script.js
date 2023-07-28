@@ -38,7 +38,7 @@ $('#user-login-btn').click(function () {
 
 });
 
-createAjaxReq = (studata) => {
+createAjaxReq = (studentdatajson) => {
     return new Promise((resolve, reject) => {
         // AJAX request
         const http = new XMLHttpRequest();
@@ -55,7 +55,7 @@ createAjaxReq = (studata) => {
 
         http.open("POST", "http://localhost:8080/greenwich/User-Login", true);
         http.setRequestHeader('Content-Type', 'application/json');
-        http.send(studata);
+        http.send(studentdatajson);
     });
 }
 
