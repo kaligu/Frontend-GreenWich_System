@@ -20,7 +20,7 @@ $('#user-login-btn').click(function () {
                     console.log('AJAX request succeeded');
 
                     // Redirect to the dashboard page
-                    window.location.href = 'user-dashboard.html';
+                    window.location.href = 'pages/user-dashboard.html';
 
             } else {
 
