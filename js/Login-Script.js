@@ -14,13 +14,14 @@ $('#user-login-btn').click(function () {
         .then(function (result) {
             // Handle the AJAX request success or failure here
             if (result) {
-                //generate alert
-                $("#mismatch-error").css("display", "none");
+                    //generate alert
+                    $("#mismatch-error").css("display", "none");
 
-                console.log('AJAX request succeeded');
+                    console.log('AJAX request succeeded');
 
-                // Redirect to the dashboard page
-                window.location.href = 'user-dashboard.html';
+                    // Redirect to the dashboard page
+                    window.location.href = 'user-dashboard.html';
+
             } else {
 
                 $("#mismatch-error").css("display", "block");
@@ -45,8 +46,15 @@ createAjaxReq = (studentdatajson) => {
 
         http.onreadystatechange = () => {
             if (http.readyState === XMLHttpRequest.DONE) {
+                console.log("before state")
                 if (http.status === 200) {
+                    console.log("after state")
+                    const response = http.responseText;
+                    console.log(response)
                     resolve(true); // AJAX request succeeded
+                    if (response.includes("valid login")) {
+
+                    }
                 } else {
                     resolve(false); // AJAX request failed
                 }
