@@ -1,3 +1,8 @@
+//search member
+$('#txtfld-member-search').on( "keypress", function() {
+
+} );
+
 //add member
 $('#addMemberSaveBtn').click(function() {
     const membernic = $('#memberAddNIC').val();
@@ -63,6 +68,47 @@ $('#updateMemberUpdateBtn').click(function() {
                 $('#memberUpdateAddress').val('');
 
                 alert("Member Updated Successfully!");
+
+                console.log('AJAX request succeeded');
+            } else {
+
+                alert("Try Again!");
+
+                console.error('*AJAX request failed');
+            }
+        })
+        .catch(function (error) {
+            alert("Try Again!");
+
+            console.error('AJAX request failed:', error);
+        });
+
+});
+
+//remove member
+$('#removeMemberRemoveBtn').click(function() {
+    const membernic = $('#memberRemoveNIC').val();
+    const membername = $('#memberRemoveName').val();
+    const membertell = $('#memberRemoveTell').val();
+    const memberaddress = $('#memberRemoveAddress').val();
+
+    const newMember = {membernic, membername, membertell, memberaddress};
+
+    const newMemberJson = JSON.stringify(newMember);
+
+    console.log(newMemberJson);
+
+// Call the function to send the AJAX request
+    createAjaxReqMember(newMemberJson, "DELETE")
+        .then(function (result) {
+            // Handle the AJAX request success or failure here
+            if (result.includes("member removed")) {
+                $('#memberRemoveNIC').val('');
+                $('#memberRemoveName').val('');
+                $('#memberRemoveTell').val('');
+                $('#memberRemoveAddress').val('');
+
+                alert("Member Removed Successfully!");
 
                 console.log('AJAX request succeeded');
             } else {

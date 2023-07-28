@@ -102,7 +102,7 @@
                             </button>
 
                             <div class="alert alert-danger" role="alert" style="display: none" id="mismatch-error">
-                                Username or Password or both are Mismatched! Try again...
+                                Username or Password or both are Mismatched or Server Side Error! Try again...
                             </div>
                         </div>
                     </div>
@@ -200,17 +200,17 @@
         </div>
         <div class="card-body text-dark" style="background-color: #a5a8a6">
             <div class="row">
-                <!-- Button trigger add customer modal -->
+                <!-- Button trigger add member modal -->
                 <button type="button" class="btn btn-primary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#addMemberModel">+ Add</button>
-                <!-- Button trigger update customer modal -->
+                <!-- Button trigger update member modal -->
                 <button type="button" class="btn btn-secondary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#updateMemberModal">! Update</button>
-                <!-- Button trigger Remove customer modal -->
-                <button type="button" class="btn btn-danger my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#customerRemoveModal">- Remove</button>
+                <!-- Button trigger Remove member modal -->
+                <button type="button" class="btn btn-danger my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#memberRemoveModal">- Remove</button>
             </div>
             <div class="row">
                 <!-- Search Customer -->
                 <form class="my-4 col-sm-12 col-md-8 col-lg-6" role="search" >
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control" type="search" placeholder="Type NIC to search ..." aria-label="Search" id="txtfld-member-search">
                 </form>
             </div>
             <!--customer view table -->
@@ -243,7 +243,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addMemberModelLabel">Add a new Customer</h1>
+                    <h1 class="modal-title fs-5" id="addMemberModelLabel">Add a new Member</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -275,44 +275,39 @@
         </div>
     </div>
 
-    <!-- Remove cutomer Modal -->
-    <div class="modal fade" id="customerRemoveModal" tabindex="-1" aria-labelledby="customerRemoveModalLabel" aria-hidden="true">
+    <!-- Remove member Modal -->
+    <div class="modal fade" id="memberRemoveModal" tabindex="-1" aria-labelledby="memberRemoveModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="customerRemoveModalLabel">Remove existing Customer</h1>
+                    <h1 class="modal-title fs-5" id="memberRemoveModalLabel">Remove existing Member</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
                 </div>
                 <div class="modal-body">
-
-                    <!--Remove customer form-->
+                    <!--Remove member form-->
                     <form>
                         <div class="mb-3">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-dark" type="submit">Search</button>
+                            <label for="memberRemoveNIC" class="form-label">NIC </label>
+                            <input type="text" class="form-control" id="memberRemoveNIC">
                         </div>
                         <div class="mb-3">
-                            <label for="customerRemoveNIC" class="form-label">NIC </label>
-                            <input type="text" class="form-control" id="customerRemoveNIC">
+                            <label for="memberRemoveName" class="form-label">Name </label>
+                            <input type="text" class="form-control" id="memberRemoveName">
                         </div>
                         <div class="mb-3">
-                            <label for="customerRemoveName" class="form-label">Name </label>
-                            <input type="number" class="form-control" id="customerRemoveName">
+                            <label for="memberRemoveTell" class="form-label">Tell </label>
+                            <input type="number" class="form-control" id="memberRemoveTell">
                         </div>
                         <div class="mb-3">
-                            <label for="customerRemoveTell" class="form-label">Tell </label>
-                            <input type="number" class="form-control" id="customerRemoveTell">
-                        </div>
-                        <div class="mb-3">
-                            <label for="customerRemoveAddress" class="form-label">Address </label>
-                            <input type="text" class="form-control" id="customerRemoveAddress">
+                            <label for="memberRemoveAddress" class="form-label">Address </label>
+                            <input type="text" class="form-control" id="memberRemoveAddress">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Remove</button>
+                    <button type="submit" class="btn btn-primary" id="removeMemberRemoveBtn">Remove</button>
                 </div>
             </div>
         </div>
@@ -323,7 +318,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="updateMemberModalLabel">Update existing Customer</h1>
+                    <h1 class="modal-title fs-5" id="updateMemberModalLabel">Update existing Member</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -357,15 +352,15 @@
 
 
 
-    <!--Item Form-->
+    <!--Book Form-->
     <div class="card my-2 mx-2" id="itemForm" style="display: none;">
         <div class="card-header text-dark" style="font-size: 25px; background-color: #848684">
-            Item Manage
+            Books Manage
         </div>
         <div class="card-body text-dark" style="background-color: #a5a8a6">
             <div class="row">
                 <!-- Button trigger add item modal -->
-                <button type="button" class="btn btn-primary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#itemAddModal">+ Add</button>
+                <button type="button" class="btn btn-primary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#bookAddModal">+ Add</button>
                 <!-- Button trigger update item modal -->
                 <button type="button" class="btn btn-secondary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#itemUpdateModal">! Update</button>
                 <!-- Button trigger Remove item modal -->
@@ -402,38 +397,38 @@
         </div>
     </div>
 
-    <!-- add cutomer Modal -->
-    <div class="modal fade" id="itemAddModal" tabindex="-1" aria-labelledby="itemAddModalLabel" aria-hidden="true">
+    <!-- add book Modal -->
+    <div class="modal fade" id="bookAddModal" tabindex="-1" aria-labelledby="bookAddModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="itemAddModalLabel">Add a new Item</h1>
+                    <h1 class="modal-title fs-5" id="bookAddModalLabel">Add a new Book</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!--add item form-->
+                    <!--add Member form-->
                     <form>
                         <div class="mb-3">
-                            <label for="itemAddCode" class="form-label">Code </label>
-                            <input type="text" class="form-control" id="itemAddCode">
+                            <label for="bookAddISBN" class="form-label">ISBN </label>
+                            <input type="text" class="form-control" id="bookAddISBN">
                         </div>
                         <div class="mb-3">
-                            <label for="itemAddDescription" class="form-label">Description </label>
-                            <input type="text" class="form-control" id="itemAddDescription">
+                            <label for="bookAddName" class="form-label">Name </label>
+                            <input type="text" class="form-control" id="bookAddName">
                         </div>
                         <div class="mb-3">
-                            <label for="itemAddQTY" class="form-label">QTY </label>
-                            <input type="number" class="form-control" id="itemAddQTY">
+                            <label for="bookAddAuthor" class="form-label">Author </label>
+                            <input type="number" class="form-control" id="bookAddAuthor">
                         </div>
                         <div class="mb-3">
-                            <label for="itemAddUnitPrice" class="form-label">Unit Price </label>
-                            <input type="number" class="form-control" id="itemAddUnitPrice">
+                            <label for="bookAddDesc" class="form-label">Description </label>
+                            <input type="text" class="form-control" id="bookAddDesc">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="itemAddbtnSave" type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary" id="bookAddSaveBtn">Save</button>
                 </div>
             </div>
         </div>
@@ -728,5 +723,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="js/Login-Script.js"></script>
 <script src="js/Member-Script.js"></script>
+<script src="js/Book-Manage.js"></script>
 </body>
 </html>
