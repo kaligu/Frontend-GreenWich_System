@@ -1,3 +1,5 @@
+document.querySelector(".user-login").style.display="block";
+document.querySelector(".user-dashboard").style.display="none";
 //user login button
 $('#user-login-btn').click(function () {
     const username = $('#txtfld-username').val();
@@ -14,13 +16,13 @@ $('#user-login-btn').click(function () {
         .then(function (result) {
             // Handle the AJAX request success or failure here
             if (result) {
+                document.querySelector(".user-login").style.display="none";
+                document.querySelector(".user-dashboard").style.display="block";
+
                     //generate alert
                     $("#mismatch-error").css("display", "none");
 
                     console.log('AJAX request succeeded');
-
-                    // Redirect to the dashboard page
-                    window.location.href = 'pages/user-dashboard.html';
 
             } else {
 
@@ -68,6 +70,7 @@ createAjaxReq = (studentdatajson) => {
 
 // //user login button
 $('#btnLogout').click(function () {
-    window.location.href = 'pages/user-dashboard.html';
+    document.querySelector(".user-login").style.display="block";
+    document.querySelector(".user-dashboard").style.display="none";
 });
 
