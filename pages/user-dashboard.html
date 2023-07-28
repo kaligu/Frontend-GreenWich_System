@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="../css/normalize.css">
 
     <!-- Initialized Boostrap CSS Framework-->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css/index-css.css">
+    <link rel="stylesheet" href="../css/index-css.css">
 
-    <link rel="icon" type="image/x-icon" href="assets/icons/roundlogo.png">
+    <link rel="icon" type="image/x-icon" href="../assets/icons/roundlogo.png">
     <title>GreenWich Library</title>
-
 </head>
 
 <body style="background-color: rgba(69,78,69,0.93)">
-
 <!-- login page-->
-<section class="user-login" >
+<section class="user-login">
     <!-- Section: Design Block -->
     <section class="background-radial-gradient overflow-hidden">
         <style>
@@ -111,10 +109,10 @@
         </div>
     </section>
 </section>
-<section class="user-dashboard" style="display: none">
+<section class="user-dashboard">
     <!--nav bar-->
     <nav class="navbar navbar-dark navbar-expand-sm" style="background-color:#004905">
-        <img src="assets/icons/longgreenwichlogo.png" class="img-fluid " alt="icon" style="width: 240px">
+        <img src="../assets/icons/longgreenwichlogo.png" class="img-fluid " alt="icon" style="width: 240px">
         <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -127,7 +125,7 @@
                     <button type="button" class="btn btn-link" id="btnOrderDetailsForm" style="color: white">Order Details</button>
                 </li>
                 <li class="nav-item text-white mx-1 my-2">
-                    <button type="button" class="btn btn-link" id="btnMemberForm" style="color: white">Member</button>
+                    <button type="button" class="btn btn-link" id="btnCustomerForm" style="color: white">Customer</button>
                 </li>
                 <li class="nav-item text-white mx-1 my-2">
                     <button type="button" class="btn btn-link" id="btnItemForm" style="color: white">Item</button>
@@ -141,7 +139,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <img src="assets/icons/user-96.png" alt="User Icon" style="width: 30px;">
+                        <img src="../assets/icons/user-96.png" alt="User Icon" style="width: 30px;">
                     </a>
                 </li>
             </ul>
@@ -193,17 +191,18 @@
         </div>
     </div>
 
-    <!--Member Form-->
-    <div class="card my-2 mx-2" id="MemberForm" style="display: none;">
+
+    <!--Customer Form-->
+    <div class="card my-2 mx-2" id="customerForm" style="display: none;">
         <div class="card-header text-dark" style="font-size: 25px; background-color: #848684">
-            Member Manage
+            Customer Manage
         </div>
         <div class="card-body text-dark" style="background-color: #a5a8a6">
             <div class="row">
                 <!-- Button trigger add customer modal -->
-                <button type="button" class="btn btn-primary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#addMemberModel">+ Add</button>
+                <button type="button" class="btn btn-primary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Add</button>
                 <!-- Button trigger update customer modal -->
-                <button type="button" class="btn btn-secondary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#updateMemberModal">! Update</button>
+                <button type="button" class="btn btn-secondary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#customerUpdateModal">! Update</button>
                 <!-- Button trigger Remove customer modal -->
                 <button type="button" class="btn btn-danger my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#customerRemoveModal">- Remove</button>
             </div>
@@ -238,38 +237,38 @@
         </div>
     </div>
 
-    <!-- add Member Modal -->
-    <div class="modal fade" id="addMemberModel" tabindex="-1" aria-labelledby="addMemberModelLabel" aria-hidden="true">
+    <!-- add cutomer Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addMemberModelLabel">Add a new Customer</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add a new Customer</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!--add Member form-->
+                    <!--add customer form-->
                     <form>
                         <div class="mb-3">
-                            <label for="memberAddNIC" class="form-label">NIC </label>
-                            <input type="text" class="form-control" id="memberAddNIC">
+                            <label for="customerAddNIC" class="form-label">NIC </label>
+                            <input type="text" class="form-control" id="customerAddNIC">
                         </div>
                         <div class="mb-3">
-                            <label for="memberAddName" class="form-label">Name </label>
-                            <input type="text" class="form-control" id="memberAddName">
+                            <label for="customerAddName" class="form-label">Name </label>
+                            <input type="number" class="form-control" id="customerAddName">
                         </div>
                         <div class="mb-3">
-                            <label for="memberAddTell" class="form-label">Tell </label>
-                            <input type="number" class="form-control" id="memberAddTell">
+                            <label for="customerAddTell" class="form-label">Tell </label>
+                            <input type="number" class="form-control" id="customerAddTell">
                         </div>
                         <div class="mb-3">
-                            <label for="memberAddAddress" class="form-label">Address </label>
-                            <input type="text" class="form-control" id="memberAddAddress">
+                            <label for="customerAddAddress" class="form-label">Address </label>
+                            <input type="text" class="form-control" id="customerAddAddress">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="addMemberSaveBtn">Save</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </div>
         </div>
@@ -282,10 +281,8 @@
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="customerRemoveModalLabel">Remove existing Customer</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
                 </div>
                 <div class="modal-body">
-
                     <!--Remove customer form-->
                     <form>
                         <div class="mb-3">
@@ -318,38 +315,42 @@
         </div>
     </div>
 
-    <!-- Update Member Modal -->
-    <div class="modal fade" id="updateMemberModal" tabindex="-1" aria-labelledby="updateMemberModalLabel" aria-hidden="true">
+    <!-- Update cutomer Modal -->
+    <div class="modal fade" id="customerUpdateModal" tabindex="-1" aria-labelledby="customerUpdateModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="updateMemberModalLabel">Update existing Customer</h1>
+                    <h1 class="modal-title fs-5" id="customerUpdateModalLabel">Update existing Customer</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!--Update member form-->
+                    <!--Update customer form-->
                     <form>
                         <div class="mb-3">
-                            <label for="memberUpdateNIC" class="form-label">NIC </label>
-                            <input type="text" class="form-control" id="memberUpdateNIC">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-dark" type="submit">Search</button>
                         </div>
                         <div class="mb-3">
-                            <label for="memberUpdateName" class="form-label">Name </label>
-                            <input type="text" class="form-control" id="memberUpdateName">
+                            <label for="customerUpdateNIC" class="form-label">NIC </label>
+                            <input type="text" class="form-control" id="customerUpdateNIC">
                         </div>
                         <div class="mb-3">
-                            <label for="memberUpdateTell" class="form-label">Tell </label>
-                            <input type="number" class="form-control" id="memberUpdateTell">
+                            <label for="customerUpdateName" class="form-label">Name </label>
+                            <input type="number" class="form-control" id="customerUpdateName">
                         </div>
                         <div class="mb-3">
-                            <label for="memberUpdateAddress" class="form-label">Address </label>
-                            <input type="text" class="form-control" id="memberUpdateAddress">
+                            <label for="customerUpdateTell" class="form-label">Tell </label>
+                            <input type="number" class="form-control" id="customerUpdateTell">
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerUpdateAddress" class="form-label">Address </label>
+                            <input type="text" class="form-control" id="customerUpdateAddress">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="updateMemberUpdateBtn">Update Changes</button>
+                    <button type="submit" class="btn btn-primary">Update Changes</button>
                 </div>
             </div>
         </div>
@@ -724,9 +725,9 @@
     <!--        </div>-->
     <!--    </footer>-->
 </section>
-<script src="js/jquery-3.6.4.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-<script src="js/Login-Script.js"></script>
-<script src="js/Member-Script.js"></script>
+
+<script src="../js/jquery-3.6.4.min.js"></script>
+
+<script src="../js/Login-Script.js"></script>
 </body>
 </html>
