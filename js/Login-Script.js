@@ -68,6 +68,6 @@ createAjaxReq = (studentdatajson) => {
 
 // //user login button
 $('#btnLogout').click(function () {
-    window.location.href = 'index.html';
+    window.location.href = 'pages/user-dashboard.html';
 });
 
