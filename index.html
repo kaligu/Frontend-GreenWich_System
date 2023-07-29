@@ -130,7 +130,7 @@
                     <button type="button" class="btn btn-link" id="btnMemberForm" style="color: white">Member</button>
                 </li>
                 <li class="nav-item text-white mx-1 my-2">
-                    <button type="button" class="btn btn-link" id="btnItemForm" style="color: white">Item</button>
+                    <button type="button" class="btn btn-link" id="btnItemForm" style="color: white">Book</button>
                 </li>
 
             </ul>
@@ -359,12 +359,12 @@
         </div>
         <div class="card-body text-dark" style="background-color: #a5a8a6">
             <div class="row">
-                <!-- Button trigger add item modal -->
+                <!-- Button trigger add book modal -->
                 <button type="button" class="btn btn-primary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#bookAddModal">+ Add</button>
-                <!-- Button trigger update item modal -->
-                <button type="button" class="btn btn-secondary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#itemUpdateModal">! Update</button>
-                <!-- Button trigger Remove item modal -->
-                <button type="button" class="btn btn-danger my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#itemRemoveModal">- Remove</button>
+                <!-- Button trigger update book modal -->
+                <button type="button" class="btn btn-secondary my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#bookUpdateModal">! Update</button>
+                <!-- Button trigger Remove book modal -->
+                <button type="button" class="btn btn-danger my-1 col-sm-12 col-md-8 mx-md-2 col-lg-2 mx-lg-1" data-bs-toggle="modal" data-bs-target="#bookRemoveModal">- Remove</button>
             </div>
             <div class="row">
                 <!-- Search Item -->
@@ -406,7 +406,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!--add Member form-->
+                    <!--add Book form-->
                     <form>
                         <div class="mb-3">
                             <label for="bookAddISBN" class="form-label">ISBN </label>
@@ -418,7 +418,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="bookAddAuthor" class="form-label">Author </label>
-                            <input type="number" class="form-control" id="bookAddAuthor">
+                            <input type="text" class="form-control" id="bookAddAuthor">
                         </div>
                         <div class="mb-3">
                             <label for="bookAddDesc" class="form-label">Description </label>
@@ -475,42 +475,40 @@
         </div>
     </div>
 
-    <!-- Update item Modal -->
-    <div class="modal fade" id="itemUpdateModal" tabindex="-1" aria-labelledby="itemUpdateModalLabel" aria-hidden="true">
+    <!-- Update book Modal -->
+    <div class="modal fade" id="bookUpdateModal" tabindex="-1" aria-labelledby="bookUpdateModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="itemUpdateModalLabel">Update existing Item</h1>
+                    <h1 class="modal-title fs-5" id="bookUpdateModalLabel">Update existing Item</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!--Update item form-->
+                    <!--Update book form-->
+                    <input class="form-control me-2" type="search" placeholder="Type Book Name ..." aria-label="Search" id="bookUpdateSearchtxtfld">
+                    <button class="btn btn-outline-dark" type="submit"  id="bookUpdateSearchBtn">Search</button>
                     <form>
                         <div class="mb-3">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-dark" type="submit">Search</button>
+                            <label for="bookUpdateISBN" class="form-label">ISBN </label>
+                            <input type="text" class="form-control" id="bookUpdateISBN">
                         </div>
                         <div class="mb-3">
-                            <label for="itemUpdateCode" class="form-label">Code </label>
-                            <input type="text" class="form-control" id="itemUpdateCode">
+                            <label for="bookUpdateName" class="form-label">Name </label>
+                            <input type="text" class="form-control" id="bookUpdateName">
                         </div>
                         <div class="mb-3">
-                            <label for="itemUpdateDescription" class="form-label">Description </label>
-                            <input type="number" class="form-control" id="itemUpdateDescription">
+                            <label for="bookUpdateAuthor" class="form-label">Author </label>
+                            <input type="text" class="form-control" id="bookUpdateAuthor">
                         </div>
                         <div class="mb-3">
-                            <label for="itemUpdateQTY" class="form-label">QTY </label>
-                            <input type="number" class="form-control" id="itemUpdateQTY">
-                        </div>
-                        <div class="mb-3">
-                            <label for="itemUpdateUnitPrice" class="form-label">UnitPrice</label>
-                            <input type="number" class="form-control" id="itemUpdateUnitPrice">
+                            <label for="bookUpdateDesc" class="form-label">Description </label>
+                            <input type="text" class="form-control" id="bookUpdateDesc">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Update Changes</button>
+                    <button type="submit" class="btn btn-primary" id="bookUpdateBtn">Update Changes</button>
                 </div>
             </div>
         </div>
